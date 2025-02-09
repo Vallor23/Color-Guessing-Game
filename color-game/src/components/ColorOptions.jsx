@@ -1,25 +1,25 @@
 import PropTypes from "prop-types";
 
-const ColorOptions = ({ options, handleGuess }) => {
+const ColorOptions = ({ colors, handleGuess }) => {
   return (
-    <div className="options">
-      {options.map((color, index) => (
+    <div className="color-options">
+      {colors.map((color) => (
         <button
-          key={index}
-          className="color-option"
-          style={{ backgroundColor: color }}
-          onClick={() => handleGuess(color)}
+            key={color}
+            data-testid="colorOption"
+            onClick={() => handleGuess(color)}
+            className="color-button"
+            style={{ backgroundColor: color }}
         >
-          {color}
+            {color}
         </button>
-
       ))}
     </div>
   );
 }
 
 ColorOptions.propTypes = {
-    options: PropTypes.arrayOf(PropTypes.string).isRequired,
+    colors: PropTypes.arrayOf(PropTypes.string).isRequired,
     handleGuess: PropTypes.func.isRequired,
 };
 

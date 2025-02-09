@@ -3,18 +3,15 @@ import PropTypes from "prop-types";
 const ColorBox = ({ color }) => {
   return (
     <div
-      style={{
-        backgroundColor: color,
-        width: '150px',
-        height: '150px',
-        borderRadius: '10px',
-      }}
+      data-testid="colorBox"
+      className="color-box"
+      style={{ backgroundColor: color }}
     ></div>
   );
-}
+};
+
+export default ColorBox;
 
 ColorBox.propTypes = {
     color: PropTypes.string.isRequired,
 };
-
-export default ColorBox;
